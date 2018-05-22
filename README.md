@@ -1,7 +1,7 @@
-### Coffee-ordering system
+### Dialog System
 
 -------------------------------------------------------------------------
-This repository is a coffee-ordering system, its includes dialogue management, language generation and language understanding components.
+This repository is a dialog system, its includes dialogue management, language generation and language understanding components.
 
 Run the bot
 --------------
@@ -36,6 +36,7 @@ Folder structure
 
 ```
 
+### TODO
 - Add machine learning model in NLU module
 - Add deep learning model in NLU module
 - Add yaml configurtion file
