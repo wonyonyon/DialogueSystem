@@ -12,13 +12,13 @@ class RuleBasedNLU(object):
     def execute(self, sent):
         slot = self.__extrator.extract(sent)
         act_type = self.__estimator.estimator(slot)
-        state = {'user_act_type': act_type}
+        dialog_act = {'user_act_type': act_type}
         slot_cp = copy.copy(slot)
 
         for k,v in slot_cp.items():
             if v =='':
                 del slot[k]
-        state.update(slot)
+        dialog_act.update(slot)
 
-        return state
+        return dialog_act
 

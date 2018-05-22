@@ -5,7 +5,11 @@ class Estimator(object):
         pass
 
     def estimator(self,slot):
-        if slot["LOCATION"] != '':
-            return 'INFORM_LOCATION'
+        if slot["TYPE"] != '':
+            return 'INFORM_TYPE'
+        elif slot['SIZE'] != '':
+            return 'INFORM_SIZE'
+        elif slot['NUMBER'] != '':
+            return 'INFORM_NUMBER'
         else:
             return 'OTHER'

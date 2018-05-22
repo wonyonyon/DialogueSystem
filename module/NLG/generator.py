@@ -7,21 +7,24 @@ class NLGenerator(object):
 
     def generate_sentence(self, dialog_act):
         sent = ""
+        # if "TYPE" in dialog_act:
+        #     sent += '咖啡类型为{0}。'.format(dialog_act['TYPE'])
+        # if "SIZE" in dialog_act:
+        #     sent += "咖啡规格{0}。".format(dialog_act['SIZE'])
+        # if "NUMBER" in dialog_act:
+        #     sent += "{0}杯咖啡。".format(dialog_act['NUMBER'])
         
         system_act_type = dialog_act['sys_act_type']
-        if system_act_type  == "REQUEST_LOCATION":
-            sent += "请输入你要查询的城市"
-        elif system_act_type == "CHAT":
-            print("闲聊")
-        elif system_act_type == "INFORM_WEATHER":
-            # if "LOCATION" in dialog_act:
-            # sent += '你要问的城市为{0}'.format(dialog_act['LOCATION'])
-            weather = dialog_act['weather']
-            if weather:
-                sent += "{0}的pm25为{1}，空气质量{2}，{3}".format(dialog_act['LOCATION'],weather['pm25'],weather['quality'],weather['ganmao'])
-            else:
-                sent += "对不起，没有找到你要查询的城市。"
-
+        if system_act_type  == "REQUEST_TYPE":
+            sent += "请问您点什么类型的咖啡，我们有摩卡，拿铁和美式"
+        elif system_act_type == "REQUEST_SIZE":
+            sent += "大杯还是小杯呢？"
+        elif system_act_type == "REQUEST_NUMBER":
+            sent += "您要点几杯呢？"
+        elif system_act_type == "INFORM_COFFEE":
+            coffee = dialog_act['coffee']
+            sent += "已经为你预订成功。\n再次确认下你的订单：咖啡类型{0}，{1}，{2}杯。\n 希望再次可以为您服务！".format(coffee.get_coffee_type(),coffee.get_coffee_size(), coffee.get_coffee_number())
+            
         else:
             print("ERROR")
             sys.exit(1)
