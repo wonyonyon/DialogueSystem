@@ -1,6 +1,4 @@
-import sys
 
-sys.path.append("/Users/tini/NLP/chatbot/DialogueSystem")
 class NLGenerator(object):
     def __init__(self):
         pass

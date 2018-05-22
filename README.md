@@ -1,4 +1,4 @@
-### Dialog System
+### Dialogue System
 
 -------------------------------------------------------------------------
 This repository is a dialog system, its includes dialogue management, language generation and language understanding components.

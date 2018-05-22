@@ -1,5 +1,4 @@
 import sys
-sys.path.append("/Users/tini/NLP/chatbot/DialogueSystem")
 from copy import deepcopy
 from module.DM.State import State
 from module.Service.api_coffee import Coffee
